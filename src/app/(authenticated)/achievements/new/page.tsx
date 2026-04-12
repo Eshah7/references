@@ -60,7 +60,7 @@ export default function NewAchievementPage() {
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-6">
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">Achievement</h3>
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">Achievement</h3>
           <div className="space-y-4">
             <Input
               label="Title"
@@ -90,7 +90,7 @@ export default function NewAchievementPage() {
         </Card>
 
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">Details</h3>
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">Details</h3>
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <Select

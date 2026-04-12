@@ -5,14 +5,14 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'References — Career Development Platform',
-  description: 'Collect, manage, and share professional references. Track your career progression and achievements.',
+  title: 'Vouch — Verified Reference Intelligence',
+  description: 'Turn references from a checkbox into a predictive proof layer. Verified, portable, and fraud-resistant.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans bg-black text-white antialiased`}>
+      <body className={`${inter.variable} font-sans bg-white text-[#111] antialiased`}>
         {children}
       </body>
     </html>

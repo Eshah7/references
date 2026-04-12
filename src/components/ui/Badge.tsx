@@ -5,6 +5,8 @@ type BadgeVariant =
   | 'received'
   | 'expired'
   | 'transferable'
+  | 'verified'
+  | 'flagged'
   | 'technical'
   | 'leadership'
   | 'delivery'
@@ -20,23 +22,25 @@ type BadgeVariant =
   | 'promotion';
 
 const variantClasses: Record<BadgeVariant, string> = {
-  pending: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
-  received: 'bg-green-500/10 text-green-400 border-green-500/20',
-  expired: 'bg-red-500/10 text-red-400 border-red-500/20',
-  transferable: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-  technical: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  leadership: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  delivery: 'bg-green-500/10 text-green-400 border-green-500/20',
-  collaboration: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-  growth: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
-  award: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
-  other: 'bg-gray-500/10 text-gray-400 border-gray-500/20',
-  'full-time': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-  contract: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'part-time': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  internship: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-  freelance: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
-  promotion: 'bg-green-500/10 text-green-400 border-green-500/20',
+  pending: 'bg-amber-50 text-amber-700 border-amber-200',
+  received: 'bg-green-50 text-green-700 border-green-200',
+  expired: 'bg-red-50 text-red-600 border-red-200',
+  transferable: 'bg-blue-50 text-blue-600 border-blue-200',
+  verified: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  flagged: 'bg-red-50 text-red-600 border-red-200',
+  technical: 'bg-purple-50 text-purple-700 border-purple-200',
+  leadership: 'bg-orange-50 text-orange-700 border-orange-200',
+  delivery: 'bg-green-50 text-green-700 border-green-200',
+  collaboration: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+  growth: 'bg-pink-50 text-pink-700 border-pink-200',
+  award: 'bg-amber-50 text-amber-700 border-amber-200',
+  other: 'bg-gray-50 text-gray-600 border-gray-200',
+  'full-time': 'bg-blue-50 text-blue-600 border-blue-200',
+  contract: 'bg-orange-50 text-orange-700 border-orange-200',
+  'part-time': 'bg-purple-50 text-purple-700 border-purple-200',
+  internship: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+  freelance: 'bg-pink-50 text-pink-700 border-pink-200',
+  promotion: 'bg-green-50 text-green-700 border-green-200',
 };
 
 interface BadgeProps {

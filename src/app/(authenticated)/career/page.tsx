@@ -77,7 +77,7 @@ export default function CareerPage() {
 
       {showForm && (
         <Card className="mt-6">
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">New Position</h3>
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">New Position</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <Input
@@ -138,7 +138,7 @@ export default function CareerPage() {
               placeholder="e.g. TypeScript, React, PostgreSQL"
             />
             <div className="flex items-center gap-6">
-              <label className="flex items-center gap-2 cursor-pointer text-sm text-[#ccc]">
+              <label className="flex items-center gap-2 cursor-pointer text-sm text-[#444]">
                 <input
                   type="checkbox"
                   checked={form.isCurrent}
@@ -147,7 +147,7 @@ export default function CareerPage() {
                 />
                 This is my current role
               </label>
-              <label className="flex items-center gap-2 cursor-pointer text-sm text-[#ccc]">
+              <label className="flex items-center gap-2 cursor-pointer text-sm text-[#444]">
                 <input
                   type="checkbox"
                   checked={form.isPromotion}
@@ -167,7 +167,7 @@ export default function CareerPage() {
 
       <div className="mt-8">
         {career.length === 0 ? (
-          <div className="bg-[#0a0a0a] border border-[#333] rounded-lg">
+          <div className="bg-white border border-[#eaeaea] rounded-lg">
             <EmptyState
               icon={Briefcase}
               title="No career entries yet"

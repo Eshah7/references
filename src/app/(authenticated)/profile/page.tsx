@@ -36,20 +36,20 @@ export default function ProfilePage() {
       <PageHeader title="Profile" subtitle="Your personal information and career summary." />
 
       <div className="mt-6 flex items-center gap-5">
-        <div className="w-16 h-16 rounded-full bg-[#222] border border-[#333] flex items-center justify-center shrink-0">
-          <span className="text-xl font-semibold text-white">
+        <div className="w-16 h-16 rounded-full bg-[#f0f0f0] border border-[#eaeaea] flex items-center justify-center shrink-0">
+          <span className="text-xl font-semibold text-[#444]">
             {getInitials(form.name || profile.name)}
           </span>
         </div>
         <div>
-          <p className="text-base font-semibold text-white">{form.name}</p>
-          <p className="text-sm text-[#888]">{form.title}</p>
+          <p className="text-base font-semibold text-[#111]">{form.name}</p>
+          <p className="text-sm text-[#666]">{form.title}</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-6">
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">
             Basic Information
           </h3>
           <div className="space-y-4">
@@ -72,7 +72,7 @@ export default function ProfilePage() {
               label="Current Title"
               value={form.title}
               onChange={(e) => set('title', e.target.value)}
-              placeholder="Senior Product Engineer"
+              placeholder="Senior Talent Acquisition Lead"
               required
             />
             <Input
@@ -86,7 +86,7 @@ export default function ProfilePage() {
         </Card>
 
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">
             Professional Summary
           </h3>
           <Textarea
@@ -102,7 +102,7 @@ export default function ProfilePage() {
         <div className="flex items-center gap-3">
           <Button type="submit">Save Changes</Button>
           {saved && (
-            <span className="inline-flex items-center gap-1.5 text-sm text-green-400">
+            <span className="inline-flex items-center gap-1.5 text-sm text-green-600">
               <CheckCircle2 className="w-4 h-4" />
               Saved!
             </span>
@@ -110,9 +110,9 @@ export default function ProfilePage() {
         </div>
       </form>
 
-      {/* Danger zone */}
-      <div className="mt-10 pt-6 border-t border-[#1a1a1a]">
-        <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-3">
+      {/* Data section */}
+      <div className="mt-10 pt-6 border-t border-[#eaeaea]">
+        <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-3">
           Data
         </h3>
         <p className="text-sm text-[#666] mb-3">

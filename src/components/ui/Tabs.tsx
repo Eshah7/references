@@ -11,7 +11,7 @@ interface TabsProps {
 
 export function Tabs({ items, active, onChange, className }: TabsProps) {
   return (
-    <div className={cn('flex gap-1 border-b border-[#333]', className)}>
+    <div className={cn('flex gap-1 border-b border-[#eaeaea]', className)}>
       {items.map((item) => (
         <button
           key={item}
@@ -19,13 +19,13 @@ export function Tabs({ items, active, onChange, className }: TabsProps) {
           className={cn(
             'px-4 py-2.5 text-sm font-medium transition-colors relative',
             active === item
-              ? 'text-white'
-              : 'text-[#888] hover:text-[#ccc]'
+              ? 'text-[#111]'
+              : 'text-[#888] hover:text-[#444]'
           )}
         >
           {item}
           {active === item && (
-            <span className="absolute bottom-0 left-0 right-0 h-px bg-white" />
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-[#111]" />
           )}
         </button>
       ))}

@@ -11,7 +11,7 @@ interface RatingInputProps {
 export function RatingInput({ label, value, onChange }: RatingInputProps) {
   return (
     <div className="flex items-center justify-between">
-      <label className="text-sm text-[#ccc]">{label}</label>
+      <label className="text-sm text-[#444]">{label}</label>
       <div className="flex gap-1.5">
         {[1, 2, 3, 4, 5].map((n) => (
           <button
@@ -22,7 +22,7 @@ export function RatingInput({ label, value, onChange }: RatingInputProps) {
               'w-8 h-8 rounded-full text-xs font-semibold transition-all border',
               value >= n
                 ? 'bg-accent border-accent text-white'
-                : 'bg-transparent border-[#333] text-[#555] hover:border-[#555] hover:text-[#888]'
+                : 'bg-transparent border-[#eaeaea] text-[#999] hover:border-[#ccc] hover:text-[#666]'
             )}
           >
             {n}

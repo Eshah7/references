@@ -14,10 +14,11 @@ export function Card({ children, className, onClick, hover = false, padding = tr
     <div
       onClick={onClick}
       className={cn(
-        'bg-[#0a0a0a] border border-[#333] rounded-lg',
+        'bg-white border border-[#eaeaea] rounded-xl',
+        'transition-all duration-150',
         padding && 'p-6',
-        hover && 'hover:border-[#555] transition-colors cursor-pointer',
-        onClick && 'cursor-pointer',
+        hover && 'hover:border-[#ccc] hover:shadow-sm cursor-pointer active:scale-[0.99]',
+        onClick && 'cursor-pointer hover:border-[#ccc] hover:shadow-sm active:scale-[0.99]',
         className
       )}
     >

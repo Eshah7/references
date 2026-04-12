@@ -29,8 +29,8 @@ export function CategoryFilter({ active, onChange }: CategoryFilterProps) {
           className={cn(
             'px-3 py-1.5 text-xs font-medium rounded-full border transition-all',
             active === cat.value
-              ? 'bg-white text-black border-white'
-              : 'bg-transparent text-[#888] border-[#333] hover:border-[#555] hover:text-white'
+              ? 'bg-[#111] text-white border-[#111]'
+              : 'bg-transparent text-[#666] border-[#eaeaea] hover:border-[#ccc] hover:text-[#111]'
           )}
         >
           {cat.label}

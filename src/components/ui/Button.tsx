@@ -10,10 +10,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses = {
-  primary: 'bg-white text-black hover:bg-gray-100 border border-transparent',
-  secondary: 'bg-transparent text-white border border-[#333] hover:border-[#555] hover:bg-white/5',
-  ghost: 'bg-transparent text-[#888] hover:text-white border border-transparent hover:border-[#333]',
-  danger: 'bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500/20',
+  primary: 'bg-[#111] text-white hover:bg-[#222] active:bg-[#333] border border-transparent shadow-sm',
+  secondary: 'bg-white text-[#111] border border-[#eaeaea] hover:border-[#ccc] hover:bg-[#fafafa] active:bg-[#f0f0f0]',
+  ghost: 'bg-transparent text-[#666] hover:text-[#111] border border-transparent hover:border-[#eaeaea] hover:bg-[#fafafa] active:bg-[#f0f0f0]',
+  danger: 'bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 active:bg-red-200',
 };
 
 const sizeClasses = {
@@ -31,7 +31,10 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-150 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
+    'inline-flex items-center justify-center gap-2 rounded-lg font-medium',
+    'transition-all duration-150 cursor-pointer',
+    'active:scale-[0.97]',
+    'disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100',
     variantClasses[variant],
     sizeClasses[size],
     className

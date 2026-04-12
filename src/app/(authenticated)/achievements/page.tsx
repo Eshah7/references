@@ -38,7 +38,7 @@ export default function AchievementsPage() {
 
       <div className="mt-4 space-y-2">
         {filtered.length === 0 ? (
-          <div className="bg-[#0a0a0a] border border-[#333] rounded-lg">
+          <div className="bg-white border border-[#eaeaea] rounded-lg">
             <EmptyState
               icon={Star}
               title="No achievements yet"

@@ -58,7 +58,7 @@ export default function NewReferencePage() {
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-6">
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">
             About Your Referee
           </h3>
           <div className="space-y-4">
@@ -105,7 +105,7 @@ export default function NewReferencePage() {
         </Card>
 
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">
             Context for Your Referee
           </h3>
           <Textarea
@@ -119,7 +119,7 @@ export default function NewReferencePage() {
         </Card>
 
         <Card>
-          <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">
+          <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">
             Settings
           </h3>
           <label className="flex items-start gap-3 cursor-pointer">
@@ -130,9 +130,9 @@ export default function NewReferencePage() {
               onChange={(e) => set('isTransferable', e.target.checked)}
             />
             <div>
-              <p className="text-sm font-medium text-white">Make this reference transferable</p>
+              <p className="text-sm font-medium text-[#111]">Make this reference portable</p>
               <p className="text-xs text-[#666] mt-0.5">
-                Transferable references can be shared with any employer — not just one specific job application.
+                Portable references can be shared with any employer — not just one specific job application. This is the &ldquo;reference passport&rdquo; model.
               </p>
             </div>
           </label>

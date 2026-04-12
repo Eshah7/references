@@ -51,12 +51,13 @@ export default function ReferencesPage() {
         ) : (
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#333]">
-                <th className="px-5 py-3 text-left text-xs font-medium text-[#555] uppercase tracking-wider">Referee</th>
-                <th className="px-5 py-3 text-left text-xs font-medium text-[#555] uppercase tracking-wider">Relationship</th>
-                <th className="px-5 py-3 text-left text-xs font-medium text-[#555] uppercase tracking-wider">Status</th>
-                <th className="px-5 py-3 text-left text-xs font-medium text-[#555] uppercase tracking-wider">Requested</th>
-                <th className="px-5 py-3 text-left text-xs font-medium text-[#555] uppercase tracking-wider w-20">Actions</th>
+              <tr className="border-b border-[#eaeaea]">
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider">Referee</th>
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider">Relationship</th>
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider">Status</th>
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider" title="Performance Predictor Score (0–100)">Predictor</th>
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider">Requested</th>
+                <th className="px-5 py-3 text-left text-xs font-medium text-[#999] uppercase tracking-wider w-20">Actions</th>
               </tr>
             </thead>
             <tbody>

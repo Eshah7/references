@@ -32,6 +32,14 @@ export interface ReferenceRatings {
   overall: number;
 }
 
+export type VerificationStatus = 'verified' | 'unverified' | 'flagged';
+
+export interface VerificationDetails {
+  workEmailConfirmed: boolean;
+  orgGraphMatch: boolean;
+  ipVerified: boolean;
+}
+
 export interface Reference {
   id: string;
   token: string;
@@ -51,6 +59,11 @@ export interface Reference {
   ratings?: ReferenceRatings;
   strengths?: string[];
   wouldHireAgain?: boolean;
+  /** Anti-Fraud Infrastructure: referee identity verification */
+  verificationStatus?: VerificationStatus;
+  verificationDetails?: VerificationDetails;
+  /** Predictive Intelligence: composite performance predictor (0–100) */
+  performancePredictorScore?: number;
 }
 
 // ─── Achievements ─────────────────────────────────────────────────────────────
@@ -123,6 +136,46 @@ export interface ActivityItem {
   createdAt: string;
 }
 
+// ─── Recruiter / Candidate Reviews ───────────────────────────────────────────
+
+export type ReviewStage =
+  | 'screening'
+  | 'shortlisted'
+  | 'reference_check'
+  | 'offer'
+  | 'rejected';
+
+export interface CandidateReferenceSnapshot {
+  id: string;
+  refereeName: string;
+  refereeTitle: string;
+  refereeCompany: string;
+  relationship: ReferenceRelationship;
+  verificationStatus?: VerificationStatus;
+  verificationDetails?: VerificationDetails;
+  performancePredictorScore?: number;
+  isTransferable: boolean;
+  status: ReferenceStatus;
+  recommendation?: string;
+  ratings?: ReferenceRatings;
+  strengths?: string[];
+  wouldHireAgain?: boolean;
+  submittedAt?: string;
+}
+
+export interface CandidateReview {
+  id: string;
+  candidateName: string;
+  candidateEmail: string;
+  candidateCurrentTitle: string;
+  appliedRole: string;
+  reqNumber: string;
+  stage: ReviewStage;
+  references: CandidateReferenceSnapshot[];
+  submittedAt: string;
+  notes?: string;
+}
+
 // ─── App State ────────────────────────────────────────────────────────────────
 
 export interface AppState {
@@ -131,5 +184,6 @@ export interface AppState {
   achievements: Achievement[];
   career: CareerEntry[];
   activity: ActivityItem[];
+  candidateReviews?: CandidateReview[];
   version: number;
 }

@@ -11,7 +11,14 @@ export function loadState(): AppState {
       saveState(SEED_STATE);
       return SEED_STATE;
     }
-    return JSON.parse(raw) as AppState;
+    const parsed = JSON.parse(raw) as AppState;
+    // Migrate: backfill candidateReviews if missing (added in v2)
+    if (!parsed.candidateReviews) {
+      const migrated = { ...parsed, candidateReviews: SEED_STATE.candidateReviews };
+      saveState(migrated);
+      return migrated;
+    }
+    return parsed;
   } catch {
     return SEED_STATE;
   }

@@ -59,9 +59,9 @@ export default function ReferenceRequestPage() {
 
   if (!ref) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#fafafa] flex items-center justify-center px-4">
         <div className="text-center">
-          <p className="text-white font-semibold">Link not found</p>
+          <p className="text-[#111] font-semibold">Link not found</p>
           <p className="text-[#888] text-sm mt-1">This reference request link is invalid or has expired.</p>
         </div>
       </div>
@@ -70,12 +70,12 @@ export default function ReferenceRequestPage() {
 
   if (ref.status === 'received') {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[#fafafa] flex items-center justify-center px-4">
         <div className="text-center">
-          <div className="w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-4">
-            <span className="text-green-400 text-xl">✓</span>
+          <div className="w-12 h-12 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-4">
+            <span className="text-green-600 text-xl">✓</span>
           </div>
-          <p className="text-white font-semibold">Already submitted</p>
+          <p className="text-[#111] font-semibold">Already submitted</p>
           <p className="text-[#888] text-sm mt-1">You&apos;ve already submitted a reference for this request. Thank you!</p>
         </div>
       </div>
@@ -103,29 +103,26 @@ export default function ReferenceRequestPage() {
     router.push(`/references/request/${token}/thank-you`);
   };
 
-  // Find requester name from context note or just use "your colleague"
-  const requesterName = 'your colleague';
-
   return (
-    <div className="min-h-screen bg-black py-16 px-4">
+    <div className="min-h-screen bg-[#fafafa] py-16 px-4">
       <div className="w-full max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
-            <div className="w-5 h-5 bg-white rounded flex items-center justify-center">
-              <span className="text-black text-xs font-bold">R</span>
+            <div className="w-5 h-5 bg-[#111] rounded flex items-center justify-center">
+              <span className="text-white text-xs font-bold">V</span>
             </div>
-            <span className="text-[#888] text-sm">References</span>
+            <span className="text-[#666] text-sm">Vouch</span>
           </div>
-          <h1 className="text-2xl font-semibold text-white mt-2">
-            {ref.refereeName ? `${ref.refereeName} — ` : ''}{ref.refereeTitle ? `${ref.refereeTitle} at ${ref.refereeCompany}` : 'A colleague'} has been asked to provide a reference
+          <h1 className="text-2xl font-semibold text-[#111] mt-2">
+            You&apos;ve been asked to provide a reference
           </h1>
-          <p className="text-[#888] text-sm mt-3 max-w-md mx-auto leading-relaxed">
+          <p className="text-[#666] text-sm mt-3 max-w-md mx-auto leading-relaxed">
             This form will only take a few minutes. Your response will be kept confidential.
           </p>
           {ref.contextNote && (
-            <div className="mt-4 bg-[#0a0a0a] border border-[#333] rounded-lg px-4 py-3 text-sm text-[#aaa] text-left max-w-md mx-auto">
-              <p className="text-xs text-[#555] mb-1">Context from the requester:</p>
+            <div className="mt-4 bg-white border border-[#eaeaea] rounded-lg px-4 py-3 text-sm text-[#555] text-left max-w-md mx-auto">
+              <p className="text-xs text-[#999] mb-1">Context from the requester:</p>
               &ldquo;{ref.contextNote}&rdquo;
             </div>
           )}
@@ -134,7 +131,7 @@ export default function ReferenceRequestPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Your info */}
           <Card>
-            <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">Your Information</h3>
+            <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">Your Information</h3>
             <div className="space-y-4">
               <Input
                 label="Your Full Name"
@@ -167,13 +164,13 @@ export default function ReferenceRequestPage() {
 
           {/* Ratings */}
           <Card>
-            <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">Ratings (1 = needs work, 5 = exceptional)</h3>
+            <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">Ratings (1 = needs work, 5 = exceptional)</h3>
             <div className="space-y-4">
               <RatingInput label="Technical Skills" value={ratings.technical} onChange={(v) => setRating('technical', v)} />
               <RatingInput label="Communication" value={ratings.communication} onChange={(v) => setRating('communication', v)} />
               <RatingInput label="Leadership" value={ratings.leadership} onChange={(v) => setRating('leadership', v)} />
               <RatingInput label="Team Collaboration" value={ratings.teamwork} onChange={(v) => setRating('teamwork', v)} />
-              <div className="pt-3 border-t border-[#222]">
+              <div className="pt-3 border-t border-[#f2f2f2]">
                 <RatingInput label="Overall Rating" value={ratings.overall} onChange={(v) => setRating('overall', v)} />
               </div>
             </div>
@@ -181,7 +178,7 @@ export default function ReferenceRequestPage() {
 
           {/* Written recommendation */}
           <Card>
-            <h3 className="text-xs font-semibold text-[#555] uppercase tracking-wider mb-4">Written Recommendation</h3>
+            <h3 className="text-xs font-semibold text-[#999] uppercase tracking-wider mb-4">Written Recommendation</h3>
             <div className="space-y-4">
               <Textarea
                 label="Your Recommendation"
@@ -211,7 +208,7 @@ export default function ReferenceRequestPage() {
             {submitting ? 'Submitting…' : 'Submit Reference'}
           </Button>
 
-          <p className="text-center text-xs text-[#555]">
+          <p className="text-center text-xs text-[#999]">
             Your response is confidential and will only be shared with the requester.
           </p>
         </form>
